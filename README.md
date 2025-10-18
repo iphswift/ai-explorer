@@ -1,5 +1,7 @@
 # AI Explorer
 
+<img src="graph.png" alt="Sample Image" width="50%">
+
 This is a full-stack, interactive web application for visually expanding upon the relationships associated with a given query. Users begin with a text query, expand the graph based on AI-driven suggestions, and use the inspiration of the results to generate a final, context-aware answer from the Gemini AI.
 
 The project is a monorepo containing:
