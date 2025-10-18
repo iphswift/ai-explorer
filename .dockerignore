@@ -1,0 +1,15 @@
+# Ignore Node.js artifacts and environment files
+node_modules
+.env
+npm-debug.log
+
+# Ignore frontend files
+index.html
+public/
+
+# Ignore deployment and Git files
+Dockerfile
+deploy.sh
+.dockerignore
+.git
+.gitignore

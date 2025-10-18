@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AI Explorer</title>
+    <link rel="stylesheet" href="./public/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+</head>
+<body>
+    <div class="controls">
+        <input type="text" id="query-input" placeholder="Enter your query...">
+        <button id="query-button">Generate Graph</button>
+        <button id="response-button">Get Answer</button>
+        <button id="undo-button" disabled>Undo</button>
+        <button id="redo-button" disabled>Redo</button>
+    </div>
+
+    <div id="graph-container">
+        <svg></svg>
+    </div>
+
+    <div id="loading-overlay" class="loading-overlay">
+        <div class="spinner"></div>
+        <p id="loading-text"></p>
+    </div>
+
+    <div id="response-modal" class="modal-overlay">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Final Answer</h2>
+            <div id="modal-text"></div>
+        </div>
+    </div>
+
+    <script type="module" src="./public/main.js"></script>
+</body>
+</html>

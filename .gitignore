@@ -1,0 +1,23 @@
+# Dependencies
+/node_modules
+package-lock.json
+
+# Environment variables
+.env
+
+# Temporary files from deploy script
+*.tmp
+*.bak
+
+# Log files
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS-generated files
+.DS_Store
+Thumbs.db
+
+# Editor directories and files
+.vscode/
