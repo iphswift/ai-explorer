@@ -55,14 +55,27 @@ echo "🚀 3. Deploying frontend to Cloud Storage..."
 # Create a temporary backup of the original index.html
 cp index.html index.html.bak
 
+# Create a temporary backup of the original apiService.js
+cp public/apiService.js public/apiService.js.bak
+
 # Replace the localhost API URL with the deployed Cloud Run service URL
 sed "s|http://localhost:3000|$SERVICE_URL|g" index.html > index.tmp.html && mv index.tmp.html index.html
 echo "✅ API URL in index.html updated for deployment."
+
+# Replace the localhost API URL with the deployed Cloud Run service URL
+sed "s|http://localhost:3000|$SERVICE_URL|g" public/apiService.js > public/apiService.tmp.js && mv public/apiService.tmp.js public/apiService.js
+echo "✅ API URL in apiService.js updated for deployment."
 
 # Upload the modified index.html file
 echo "✅ Uploading frontend files..."
 gcloud storage cp ./index.html "gs://$BUCKET_NAME"
 gcloud storage cp -r ./public "gs://$BUCKET_NAME"
+
+
+# Restore the original apiService.js from backup
+mv public/apiService.js.bak public/apiService.js
+echo "✅ Local apiService.js restored."
+echo
 
 # Restore the original index.html from backup
 mv index.html.bak index.html
